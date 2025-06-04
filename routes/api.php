@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\BookGenereController;
 use App\Http\Controllers\BookGenreController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReviewUsuaryController;
@@ -43,11 +42,6 @@ Route::controller(BookGenreController::class)->group(function () {
     Route::delete('/bookgenres/{id}', 'destroy');
 });
 
-Route::controller(BookGenreController::class)->group(function () {
-    Route::get('/books/{bookId}/genres', 'index');
-    Route::post('/books/{bookId}/genres', 'attach');
-    Route::delete('/books/{bookId}/genres/{genreId}', 'destroy');
-});
 
 Route::controller(ReviewUsuaryController::class)->group(function () {
     Route::get('/user-reviews', 'index');
